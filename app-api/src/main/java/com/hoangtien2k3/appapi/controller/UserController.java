@@ -29,8 +29,8 @@ public class UserController {
             @RequestParam String password) {
 
         Map<String, Object> response = new HashMap<>();
-
         List<UserRepository.User> foundUser = userRepository.findByEmail(email);
+
         if (foundUser.size() > 0) {
             if (userType.equals("facebook")) {
                 response.put("result", "ok");
