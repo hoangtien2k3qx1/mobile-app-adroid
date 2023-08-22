@@ -1,0 +1,25 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id btnLogin
+id card_view
+id imageView2
+id imgProfile
+id textView
+id txtEmail
+id txtPassword
+id txtValidate
+layout activity_2
+layout activity_main
+mipmap ic_launcher
+mipmap ic_launcher_round
+mipmap siu
+mipmap siuuuu
+string app_name
+style Base.Theme.My_app
+style Theme.My_app
+xml backup_rules
+xml data_extraction_rules
