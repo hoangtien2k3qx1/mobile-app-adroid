@@ -9,60 +9,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88649eb6-8ff0-4bc3-b0c3-d4277e556862" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../app/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/androidTest/java/com/example/app/ExampleInstrumentedTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/app/MainActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/java/com/example/app/PlacesActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/res/drawable/ic_launcher_foreground.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/res/layout/activity_places.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/res/mipmap-anydpi/ic_launcher.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/res/mipmap-anydpi/ic_launcher_round.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/res/mipmap-hdpi/ic_launcher.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/res/mipmap-hdpi/siu.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/res/mipmap-hdpi/siuuuu.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/res/mipmap-mdpi/ic_launcher.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/res/values-night/themes.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/res/values/themes.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/res/xml/backup_rules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/main/res/xml/data_extraction_rules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/app/src/test/java/com/example/app/ExampleUnitTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../app/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="88649eb6-8ff0-4bc3-b0c3-d4277e556862" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\hello\.android\avd\Pixel_4_API_31_-_Android_12.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\hello\.android\avd\Pixel_6_API_31.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -91,18 +44,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Android/mobile-app-adroid/my_app&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "D:/Android/mobile-app-adroid/FoodOrder",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Android\mobile-app-adroid\my_app\app\src\main\res\mipmap-hdpi" />

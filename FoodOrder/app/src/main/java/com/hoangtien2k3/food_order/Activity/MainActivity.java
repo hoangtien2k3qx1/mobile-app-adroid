@@ -43,15 +43,17 @@ public class MainActivity extends Activity {
         recyclerViewPopularList.setLayoutManager(linearLayoutManager);
 
         ArrayList<FoodDomain> footlist = new ArrayList<>();
-        footlist.add(new FoodDomain("Bánh mỳ", "cat_1", "Bánh pizza hương vị rất ngon, lôi cuốn, được là bằng công thức đặc biệt", 13.0, 5, 20, 1000 ));
-        footlist.add(new FoodDomain("Bánh", "cat_2", "Bánh pizza hương vị rất ngon, lôi cuốn, được là bằng công thức đặc biệt", 13.0, 5, 20, 1000 ));
-        footlist.add(new FoodDomain("CoCa", "cat_3", "Bánh pizza hương vị rất ngon, lôi cuốn, được là bằng công thức đặc biệt", 13.0, 5, 20, 1000 ));
-        footlist.add(new FoodDomain("Đồ uống", "cat_4", "Bánh pizza hương vị rất ngon, lôi cuốn, được là bằng công thức đặc biệt", 13.0, 5, 20, 1000 ));
-
+        footlist.add(new FoodDomain("Bánh mỳ", "cat_3", "Bánh pizza hương vị rất ngon, lôi cuốn, được là bằng công thức đặc biệt", 13.0, 1,20, 123 ));
+        footlist.add(new FoodDomain("Bánh", "pizza1", "Bánh pizza hương vị rất ngon, lôi cuốn, được là bằng công thức đặc biệt", 15.0, 2, 20, 132 ));
+        footlist.add(new FoodDomain("CoCa", "cat_1", "Bánh pizza hương vị rất ngon, lôi cuốn, được là bằng công thức đặc biệt", 10.0, 3, 20, 54 ));
+        footlist.add(new FoodDomain("Đồ uống", "pizza3", "Bánh pizza hương vị rất ngon, lôi cuốn, được là bằng công thức đặc biệt", 25.0, 4, 20, 65 ));
+        footlist.add(new FoodDomain("Bánh mỳ", "cat_3", "Bánh pizza hương vị rất ngon, lôi cuốn, được là bằng công thức đặc biệt", 13.0, 1,20, 1000 ));
+        footlist.add(new FoodDomain("Bánh", "pizza1", "Bánh pizza hương vị rất ngon, lôi cuốn, được là bằng công thức đặc biệt", 15.0, 2, 20, 1000 ));
+        footlist.add(new FoodDomain("CoCa", "cat_1", "Bánh pizza hương vị rất ngon, lôi cuốn, được là bằng công thức đặc biệt", 10.0, 3, 20, 1000 ));
+        footlist.add(new FoodDomain("Đồ uống", "pizza3", "Bánh pizza hương vị rất ngon, lôi cuốn, được là bằng công thức đặc biệt", 25.0, 4, 20, 1000 ));
 
         adapter2 = new RecommentedAdapter(footlist);
         recyclerViewPopularList.setAdapter(adapter2);
-
     }
 
     private void recyclerViewCategory() {
@@ -60,14 +62,13 @@ public class MainActivity extends Activity {
         recyclerViewCategoryList.setLayoutManager(linearLayoutManager);
 
         ArrayList<CategoryDomain> categoryList = new ArrayList<>();
-        categoryList.add(new CategoryDomain("Pizza", "cat_1"));
+        categoryList.add(new CategoryDomain("Pizza", "pizza1"));
         categoryList.add(new CategoryDomain("Bánh", "cat_2"));
-        categoryList.add(new CategoryDomain("CoCa", "cat_3"));
+        categoryList.add(new CategoryDomain("CoCa", "pizza3"));
         categoryList.add(new CategoryDomain("Đồ uống", "cat_4"));
         categoryList.add(new CategoryDomain("Ngon", "cat_5"));
 
         adapter = new CategoryAdapter(categoryList);
         recyclerViewCategoryList.setAdapter(adapter);
-
     }
 }

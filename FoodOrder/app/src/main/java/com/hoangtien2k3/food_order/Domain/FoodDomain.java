@@ -1,7 +1,6 @@
 package com.hoangtien2k3.food_order.Domain;
 
 public class FoodDomain {
-
     private String title;
     private String pic;
     private String descroption;

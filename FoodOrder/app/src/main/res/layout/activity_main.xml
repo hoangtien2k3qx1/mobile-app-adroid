@@ -8,6 +8,7 @@
     tools:context=".Activity.MainActivity">
 
     <ScrollView
+        android:id="@+id/scrollView3"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -62,8 +63,8 @@
                     android:id="@+id/card_view"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:layout_marginEnd="32dp"
                     android:layout_gravity="center"
+                    android:layout_marginEnd="32dp"
                     app:cardCornerRadius="60dp"
                     app:layout_constraintBottom_toBottomOf="@+id/textView15"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -87,39 +88,36 @@
                     app:layout_constraintStart_toStartOf="parent">
 
                     <ImageView
-                        android:id="@+id/imageView21"
+                        android:id="@+id/imageView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="17dp"
-                        android:layout_marginTop="112dp"
-                        android:layout_marginEnd="17dp"
-                        android:scaleType="fitXY"
+                        android:layout_marginTop="110dp"
+                        android:src="@drawable/banner"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintHorizontal_bias="0.494"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/banner" />
-s
+                        app:layout_constraintTop_toTopOf="parent" />
+
                     <TextView
                         android:id="@+id/textView16"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="28dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginEnd="40dp"
                         android:text="Giảm giá 30%"
                         android:textColor="#ffffff"
                         android:textSize="20sp"
                         android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="@+id/imageView21"
-                        app:layout_constraintTop_toTopOf="@+id/imageView21" />
+                        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+                        app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
                     <TextView
                         android:id="@+id/textView18"
                         android:layout_width="121dp"
                         android:layout_height="23dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="3dp"
                         android:gravity="center"
-                        android:text="24/08/2023"
+                        android:text="24 - 08 -2023"
                         android:textColor="#ffffff"
                         android:textSize="18dp"
                         app:layout_constraintEnd_toEndOf="@+id/textView16"
@@ -145,7 +143,7 @@ s
                             android:textColor="#ffffff"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintHorizontal_bias="0.4"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -156,7 +154,6 @@ s
                     android:id="@+id/editTextText9"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
-                    android:layout_marginTop="8dp"
                     android:background="@drawable/search_edit_background"
                     android:drawableStart="@drawable/search"
                     android:drawablePadding="10dp"
@@ -166,6 +163,7 @@ s
                     android:paddingStart="20dp"
                     android:textStyle="italic"
                     app:layout_constraintEnd_toEndOf="@+id/constraintLayout2"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@+id/constraintLayout2"
                     app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
 
@@ -193,9 +191,7 @@ s
                     android:id="@+id/view2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView23"
                     app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
                 <TextView
@@ -217,7 +213,7 @@ s
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -287,8 +283,7 @@ s
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
-                    android:orientation="vertical"
-                    android:visibility="visible">
+                    android:orientation="vertical">
 
                     <ImageView
                         android:id="@+id/imageView5"
@@ -355,5 +350,7 @@ s
             </LinearLayout>
         </com.google.android.material.bottomappbar.BottomAppBar>
 
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
