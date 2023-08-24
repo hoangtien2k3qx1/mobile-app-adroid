@@ -20,7 +20,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableMethodSecurity
 public class SecurityConfig {
-
+    // đây là 1 interface của spring security
     private UserDetailsService userDetailsService;
 
     public SecurityConfig(UserDetailsService userDetailsService){
@@ -33,15 +33,13 @@ public class SecurityConfig {
     }
 
     @Bean
-    public AuthenticationManager authenticationManager(
-            AuthenticationConfiguration configuration) throws Exception {
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
         return configuration.getAuthenticationManager();
     }
 
-    @Bean
+    @Bean   // cầu hình cho HTTP method
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-
-        http.csrf().disable()
+          http.csrf().disable()
                 .authorizeHttpRequests((authorize) ->
                         //authorize.anyRequest().authenticated()
                         authorize.requestMatchers(HttpMethod.GET, "/api/**").permitAll()
@@ -50,6 +48,5 @@ public class SecurityConfig {
                 );
 
         return http.build();
-
     }
 }

@@ -2,6 +2,7 @@ package com.hoangtien2k3.service;
 
 import com.hoangtien2k3.entity.User;
 import com.hoangtien2k3.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,6 +16,7 @@ import java.util.stream.Collectors;
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
 
+    @Autowired
     private UserRepository userRepository;
 
     public CustomUserDetailsService(UserRepository userRepository) {
@@ -24,14 +26,18 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String usernameOrEmail) throws UsernameNotFoundException {
         User user = userRepository.findByUsernameOrEmail(usernameOrEmail, usernameOrEmail)
-                .orElseThrow(() ->
-                        new UsernameNotFoundException("User not found with username or email: "+ usernameOrEmail));
+                .orElseThrow(() -> new UsernameNotFoundException("User not found with username or email: "+ usernameOrEmail));
 
+        // GrantedAuthority: trong spring security, nó đại diện cho các quyền được cấp cho người dùng.
+        // ví dụ: các quyền có thể là "ROLE_ADMIN", "ROLE_USER", "READ_PERMISSION", "WRITE_PERMISSION"...
         Set<GrantedAuthority> authorities = user
-                .getRoles()
-                .stream()
-                .map((role) -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toSet());
+                .getRoles() // lấy ra đối tượng Role
+                .stream()   // dùng stream API
+                .map((role) -> new SimpleGrantedAuthority(role.getName()))  // map từng Role và check Role có được phân quyền hay không.
+                .collect(Collectors.toSet());   // collect về Set
 
+        // dùng lớp User của spring security
+        // truyền vào 3 thuộc tính: name, password và authorities
         return new org.springframework.security.core.userdetails.User(user.getEmail(),
                 user.getPassword(),
                 authorities);

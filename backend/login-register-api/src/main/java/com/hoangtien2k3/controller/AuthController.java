@@ -39,10 +39,13 @@ public class AuthController {
 
     @PostMapping("/signin")
     public ResponseEntity<String> authenticateUser(@RequestBody LoginDto loginDto){
+
+        // lấy ra phân quyền cho nó
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
                 loginDto.getUsernameOrEmail(), loginDto.getPassword()));
 
-        SecurityContextHolder.getContext().setAuthentication(authentication);
+        // dùng để lưu trữ thông tin về xác thực: Authentication
+        SecurityContextHolder.getContext().setAuthentication(authentication);   // cấp quyền truy cập cho user
         return new ResponseEntity<>("You signed-in app successfully.", HttpStatus.OK);
     }
 
@@ -59,12 +62,26 @@ public class AuthController {
             return new ResponseEntity<>("Email is already taken!", HttpStatus.BAD_REQUEST);
         }
 
+
+        /*
+        // Cách 1: tạo đối tượng kiểu nguyên thủy
         // create user object
         User user = new User();
         user.setName(signUpDto.getName());
         user.setUsername(signUpDto.getUsername());
         user.setEmail(signUpDto.getEmail());
-        user.setPassword(passwordEncoder.encode(signUpDto.getPassword()));
+        user.setPassword(passwordEncoder.encode(signUpDto.getPassword()));*/
+
+
+        // dùng @Builder trong lombok để tạo đối tượng một cách đơn giản
+        // Cách 2: dùng anotation của lombok để tạo một cách thuận tiện
+        User user = User.builder()
+                .name(signUpDto.getName())
+                .username(signUpDto.getUsername())
+                .email(signUpDto.getEmail())
+                .password(passwordEncoder.encode(signUpDto.getPassword()))
+                .build();
+
 
         // lưu ý: phải add "ROLE_ADMIN" vào table role khi chạy spring boot:
         // INSERT INTO roles VALUES('ROLE_ADMIN');
