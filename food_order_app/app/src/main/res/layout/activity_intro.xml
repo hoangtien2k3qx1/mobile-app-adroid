@@ -21,8 +21,8 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="Đặt Đồ Ăn Mely"
+        android:layout_marginTop="80dp"
+        android:text="Tiến Đồ Ăn"
         android:textColor="#3d33a8"
         android:textSize="40sp"
         android:textStyle="bold"
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.322"
+        app:layout_constraintVertical_bias="0.286"
         app:srcCompat="@drawable/logo"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp" />
@@ -45,14 +45,14 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Mua hàng \nNgay nào"
+        android:layout_marginTop="16dp"
+        android:text="Uy tín-giá rẻ\nChất lượng"
         android:textColor="#3d33a8"
         android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.102"
-        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <TextView
@@ -60,12 +60,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Trải nghiệm mua sắm online"
+        android:text="Rất hân hạnh được phục vụ"
         android:textColor="#3d33a8"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
