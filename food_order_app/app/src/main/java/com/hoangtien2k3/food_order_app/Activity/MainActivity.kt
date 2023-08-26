@@ -4,8 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.hoangtien2k3.food_order_app.Adaptor.CategoryAdapter
-import com.hoangtien2k3.food_order_app.Adaptor.PopularAdaptor
+import com.hoangtien2k3.food_order_app.Adapter.CategoryAdapter
+import com.hoangtien2k3.food_order_app.Adapter.PopularAdapter
 import com.hoangtien2k3.food_order_app.Domain.CategoryDomain
 import com.hoangtien2k3.food_order_app.Domain.FoodDomain
 import com.hoangtien2k3.food_order_app.R
@@ -46,13 +46,13 @@ class MainActivity : AppCompatActivity() {
         recyclerViewPopularList.layoutManager = linearLayoutManager
 
         var foodList: ArrayList<FoodDomain>  = ArrayList<FoodDomain>()
-        foodList.add(FoodDomain("Bánh Pizza", "pizza1", "bánh pizza là loại bánh cực kỳ thơm ngon và hấp dẫn.", 9.75));
-        foodList.add(FoodDomain("Bánh LOL", "pizza1", "bánh pizza là loại bánh cực kỳ thơm ngon và hấp dẫn.", 9.75));
-        foodList.add(FoodDomain("Nước uống", "cat_2", "bánh pizza là loại bánh cực kỳ thơm ngon và hấp dẫn.", 9.75));
-        foodList.add(FoodDomain("Trái cây", "pop_1", "bánh pizza là loại bánh cực kỳ thơm ngon và hấp dẫn.", 9.75));
-        foodList.add(FoodDomain("CoCa-Cola", "pop_2", "bánh pizza là loại bánh cực kỳ thơm ngon và hấp dẫn.", 9.75));
+        foodList.add(FoodDomain("Bánh Pizza", "pizza1", "bánh pizza là loại bánh cực kỳ thơm ngon và hấp dẫn.", 975.0));
+        foodList.add(FoodDomain("Ngũ cốc", "pizza1", "bánh pizza là loại bánh cực kỳ thơm ngon và hấp dẫn.", 15.0));
+        foodList.add(FoodDomain("Nước uống", "cat_2", "bánh pizza là loại bánh cực kỳ thơm ngon và hấp dẫn.", 46.0));
+        foodList.add(FoodDomain("Trái cây", "pop_1", "bánh pizza là loại bánh cực kỳ thơm ngon và hấp dẫn.", 27.0));
+        foodList.add(FoodDomain("CoCa-Cola", "pop_2", "bánh pizza là loại bánh cực kỳ thơm ngon và hấp dẫn.", 75.0));
 
-        adapter2 = PopularAdaptor(foodList)
+        adapter2 = PopularAdapter(foodList)
         recyclerViewPopularList.adapter = adapter2
 
     }
