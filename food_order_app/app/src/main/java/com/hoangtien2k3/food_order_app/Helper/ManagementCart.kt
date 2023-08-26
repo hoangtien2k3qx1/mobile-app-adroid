@@ -33,7 +33,7 @@ class ManagementCart {
             listFood.add(item)
         }
 
-        tinyDB.putListObject("CardList", listFood)
+        tinyDB.putListObject("CartList", listFood)
         Toast.makeText(context, "Đã thêm Cart", Toast.LENGTH_LONG).show()
 
     }

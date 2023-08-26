@@ -1,7 +1,9 @@
 package com.hoangtien2k3.food_order_app.Activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.hoangtien2k3.food_order_app.Adapter.CategoryAdapter
@@ -20,8 +22,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        recyclerViewCategory();
+        recyclerViewCategory()
         recyclerViewPopular()
+        bottomNavigation()
+    }
+
+    private fun bottomNavigation() {
+        val cartBtn: LinearLayout = findViewById(R.id.cartBtn)
+        val homeBtn: LinearLayout = findViewById(R.id.homeBtn)
+
+        cartBtn.setOnClickListener {
+            startActivity(Intent(this, CartListActivity::class.java))
+        }
+
+        homeBtn.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
     }
 
     private fun recyclerViewCategory() {

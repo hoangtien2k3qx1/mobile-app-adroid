@@ -15,7 +15,6 @@ import com.hoangtien2k3.food_order_app.Interface.ChangeNumberItemsListener
 import com.hoangtien2k3.food_order_app.R
 
 class CartListActivity : AppCompatActivity() {
-
     private lateinit var adapter: RecyclerView.Adapter<*>
     private lateinit var recyclerViewList: RecyclerView
     private lateinit var managementCart: ManagementCart
@@ -51,17 +50,17 @@ class CartListActivity : AppCompatActivity() {
         homeBtn.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }
-        
     }
 
     private fun initView() {
-        recyclerViewList = findViewById(R.id.recyclerView)
-        totalFeeTxt = findViewById(R.id.totalTxt)
-        deliveryTxt = findViewById(R.id.totalTxt)
-        taxTxt = findViewById(R.id.totalTxt)
+        recyclerViewList = findViewById(R.id.cartView)
+        totalFeeTxt = findViewById(R.id.totalFeeTxt)
+        deliveryTxt = findViewById(R.id.deliveryTxt)
+        taxTxt = findViewById(R.id.taxTxt)
         totalTxt = findViewById(R.id.totalTxt)
         emptyTxt = findViewById(R.id.emptyTxt)
-        scrollView = findViewById(R.id.scrollView3)
+        scrollView = findViewById(R.id.scrollView)
+        recyclerViewList = findViewById(R.id.cartView)
     }
 
     private fun initList() {
@@ -94,18 +93,15 @@ class CartListActivity : AppCompatActivity() {
         val total = (totalFee + tax + delivery).roundTo2DecimalPlaces()
         val itemTotal = totalFee.roundTo2DecimalPlaces()
 
-        totalFeeTxt.text = "$$itemTotal"
-        taxTxt.text = "$$tax"
-        deliveryTxt.text = "$$delivery"
-        totalTxt.text = "$$total"
+        totalFeeTxt.text = itemTotal.toString()
+        taxTxt.text = tax.toString()
+        deliveryTxt.text = delivery.toString()
+        totalTxt.text = total.toString()
     }
 
     fun Double.roundTo2DecimalPlaces(): Double {
         return (Math.round(this * 100) / 100.0)
     }
-
-
-
 
 
 }

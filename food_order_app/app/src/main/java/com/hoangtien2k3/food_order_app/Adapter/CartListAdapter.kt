@@ -14,10 +14,30 @@ import com.hoangtien2k3.food_order_app.Helper.ManagementCart
 import com.hoangtien2k3.food_order_app.Interface.ChangeNumberItemsListener
 import com.hoangtien2k3.food_order_app.R
 
-class CartListAdapter(private val foodDomainList: ArrayList<FoodDomain>,
-                      private val managementCart: ManagementCart,
-                      private val changeNumberItemsListener: ChangeNumberItemsListener
-) : RecyclerView.Adapter<CartListAdapter.ViewHolder>() {
+class CartListAdapter() : RecyclerView.Adapter<CartListAdapter.ViewHolder>() {
+    private lateinit var foodDomainList: ArrayList<FoodDomain>
+    private lateinit var managementCart: ManagementCart
+    private lateinit var changeNumberItemsListener: ChangeNumberItemsListener
+
+    constructor(
+        foodDomainList: ArrayList<FoodDomain>,
+        managementCart: ManagementCart,
+        changeNumberItemsListener: ChangeNumberItemsListener
+    ) : this() {
+        this.foodDomainList = foodDomainList
+        this.managementCart = managementCart
+        this.changeNumberItemsListener = changeNumberItemsListener
+    }
+
+    constructor(
+        foodDomainList: ArrayList<FoodDomain>,
+        context: Context,
+        changeNumberItemsListener: ChangeNumberItemsListener
+    ) : this() {
+        this.foodDomainList = foodDomainList
+        this.managementCart = ManagementCart(context)
+        this.changeNumberItemsListener = changeNumberItemsListener
+    }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title: TextView = itemView.findViewById(R.id.titleTxt)

@@ -7,7 +7,7 @@
     tools:context=".Activity.CartListActivity">
 
     <ScrollView
-        android:id="@+id/scrollView4"
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -25,14 +25,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:text="My Cart"
+                android:text="Giỏ hàng của Tiến"
                 android:textAlignment="center"
                 android:textColor="#ff3d00"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
+                android:id="@+id/cartView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
@@ -46,17 +46,17 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/textView11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Tổng số sản phẩm: "
+                    android:text="Tổng giá sản phẩm:"
                     android:textColor="#373b54"
                     android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/totalTxt"
+                    android:id="@+id/totalFeeTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0.0 VND"
@@ -75,7 +75,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/textView12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -85,7 +85,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/totalTxt"
+                    android:id="@+id/deliveryTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0.0 VND"
@@ -104,7 +104,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/textView13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -114,7 +114,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/totalTxt"
+                    android:id="@+id/taxTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0.0 VND"
@@ -133,7 +133,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/textView14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -153,7 +153,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/textView15"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="16dp"
@@ -172,13 +172,18 @@
         android:id="@+id/emptyTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:text="Không Có Sản Phẩm Nào"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/coordinatorLayout"
-        app:layout_constraintEnd_toEndOf="@+id/scrollView4"
+        app:layout_constraintEnd_toEndOf="@+id/scrollView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/scrollView4" />
+        app:layout_constraintTop_toTopOf="@+id/scrollView" />
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinatorLayout"
