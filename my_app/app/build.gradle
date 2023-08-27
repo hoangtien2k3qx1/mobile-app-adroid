@@ -51,6 +51,6 @@ dependencies {
 
     // sen request api up to sever
     implementation 'com.android.volley:volley:1.2.0'
-    implementation 'com.google.code.gson:gson:2.8.7'
+    implementation 'com.google.code.gson:gson:2.10.1'
 
 }
