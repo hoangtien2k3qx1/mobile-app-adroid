@@ -1,9 +1,9 @@
-package com.hoangtien2k3.food_order_app.Helper
+package com.hoangtien2k3.food_order_app.helper
 
 import android.content.Context
 import android.widget.Toast
-import com.hoangtien2k3.food_order_app.Domain.FoodDomain
-import com.hoangtien2k3.food_order_app.Interface.ChangeNumberItemsListener
+import com.hoangtien2k3.food_order_app.model.FoodDomain
+import com.hoangtien2k3.food_order_app.`interface`.ChangeNumberItemsListener
 
 class ManagementCart {
     private lateinit var context: Context

@@ -1,4 +1,4 @@
-package com.hoangtien2k3.food_order_app.Adapter
+package com.hoangtien2k3.food_order_app.adapter
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -8,8 +8,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.hoangtien2k3.food_order_app.Activity.ShowDetailActivity
-import com.hoangtien2k3.food_order_app.Domain.FoodDomain
+import com.hoangtien2k3.food_order_app.activity.ShowDetailActivity
+import com.hoangtien2k3.food_order_app.model.FoodDomain
 import com.hoangtien2k3.food_order_app.R
 
 class PopularAdapter(private val popularFoodDomainList: ArrayList<FoodDomain>) : RecyclerView.Adapter<PopularAdapter.ViewHolder>() {

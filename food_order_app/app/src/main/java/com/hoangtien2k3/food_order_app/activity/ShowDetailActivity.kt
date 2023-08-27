@@ -1,12 +1,12 @@
-package com.hoangtien2k3.food_order_app.Activity
+package com.hoangtien2k3.food_order_app.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
-import com.hoangtien2k3.food_order_app.Domain.FoodDomain
-import com.hoangtien2k3.food_order_app.Helper.ManagementCart
+import com.hoangtien2k3.food_order_app.model.FoodDomain
+import com.hoangtien2k3.food_order_app.helper.ManagementCart
 import com.hoangtien2k3.food_order_app.R
 
 class ShowDetailActivity : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.hoangtien2k3.food_order_app.Adapter
+package com.hoangtien2k3.food_order_app.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,10 +8,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.hoangtien2k3.food_order_app.Activity.CartListActivity
-import com.hoangtien2k3.food_order_app.Domain.FoodDomain
-import com.hoangtien2k3.food_order_app.Helper.ManagementCart
-import com.hoangtien2k3.food_order_app.Interface.ChangeNumberItemsListener
+import com.hoangtien2k3.food_order_app.model.FoodDomain
+import com.hoangtien2k3.food_order_app.helper.ManagementCart
+import com.hoangtien2k3.food_order_app.`interface`.ChangeNumberItemsListener
 import com.hoangtien2k3.food_order_app.R
 
 class CartListAdapter() : RecyclerView.Adapter<CartListAdapter.ViewHolder>() {

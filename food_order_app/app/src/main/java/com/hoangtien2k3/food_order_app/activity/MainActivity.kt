@@ -1,4 +1,4 @@
-package com.hoangtien2k3.food_order_app.Activity
+package com.hoangtien2k3.food_order_app.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,10 +6,10 @@ import android.os.Bundle
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.hoangtien2k3.food_order_app.Adapter.CategoryAdapter
-import com.hoangtien2k3.food_order_app.Adapter.PopularAdapter
-import com.hoangtien2k3.food_order_app.Domain.CategoryDomain
-import com.hoangtien2k3.food_order_app.Domain.FoodDomain
+import com.hoangtien2k3.food_order_app.adapter.CategoryAdapter
+import com.hoangtien2k3.food_order_app.adapter.PopularAdapter
+import com.hoangtien2k3.food_order_app.model.CategoryDomain
+import com.hoangtien2k3.food_order_app.model.FoodDomain
 import com.hoangtien2k3.food_order_app.R
 
 class MainActivity : AppCompatActivity() {

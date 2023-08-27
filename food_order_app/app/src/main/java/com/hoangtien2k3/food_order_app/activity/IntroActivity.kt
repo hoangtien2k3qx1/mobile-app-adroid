@@ -1,9 +1,8 @@
-package com.hoangtien2k3.food_order_app.Activity
+package com.hoangtien2k3.food_order_app.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.hoangtien2k3.food_order_app.R
 

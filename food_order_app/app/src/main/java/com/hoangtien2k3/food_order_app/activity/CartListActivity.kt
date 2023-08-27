@@ -1,4 +1,4 @@
-package com.hoangtien2k3.food_order_app.Activity
+package com.hoangtien2k3.food_order_app.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,9 +9,9 @@ import android.widget.ScrollView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.hoangtien2k3.food_order_app.Adapter.CartListAdapter
-import com.hoangtien2k3.food_order_app.Helper.ManagementCart
-import com.hoangtien2k3.food_order_app.Interface.ChangeNumberItemsListener
+import com.hoangtien2k3.food_order_app.adapter.CartListAdapter
+import com.hoangtien2k3.food_order_app.helper.ManagementCart
+import com.hoangtien2k3.food_order_app.`interface`.ChangeNumberItemsListener
 import com.hoangtien2k3.food_order_app.R
 
 class CartListActivity : AppCompatActivity() {

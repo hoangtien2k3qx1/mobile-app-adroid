@@ -1,7 +1,9 @@
-package com.hoangtien2k3.food_order_app.Helper
+package com.hoangtien2k3.food_order_app.helper
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.database.DatabaseErrorHandler
+import android.database.sqlite.SQLiteDatabase
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Environment
@@ -9,7 +11,7 @@ import android.preference.PreferenceManager
 import android.text.TextUtils
 import android.util.Log
 import com.google.gson.Gson
-import com.hoangtien2k3.food_order_app.Domain.FoodDomain
+import com.hoangtien2k3.food_order_app.model.FoodDomain
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -20,6 +22,9 @@ class TinyDB(private val appContext: Context) {
     private val preferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(appContext)
     private var DEFAULT_APP_IMAGEDATA_DIRECTORY: String? = null
     private var lastImagePath = ""
+
+    private lateinit var db: SQLiteDatabase
+    private lateinit var dbHelper: DatabaseErrorHandler
 
     fun getImage(path: String): Bitmap? {
         var bitmapFromPath: Bitmap? = null

@@ -48,7 +48,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/usernameTxt"
+                android:id="@+id/txtUsernameAndEmail"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/edittext_background"
@@ -64,14 +64,14 @@
                 android:hint="Username and Email" />
 
             <EditText
-                android:id="@+id/passwordTxt"
+                android:id="@+id/txtPassword"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/edittext_background"
                 android:drawableStart="@drawable/password"
                 android:textColorHint="#603a91"
                 android:ems="10"
-                android:inputType="textPersonName"
+                android:inputType="textPassword"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="32dp"
@@ -80,14 +80,14 @@
                 android:hint="Password" />
 
             <EditText
-                android:id="@+id/confirmPasswordTxt"
+                android:id="@+id/txtConfirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/edittext_background"
                 android:drawableStart="@drawable/password"
                 android:textColorHint="#603a91"
                 android:ems="10"
-                android:inputType="textPersonName"
+                android:inputType="textPassword"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="32dp"
@@ -96,14 +96,14 @@
                 android:hint="Re-Password" />
 
             <EditText
-                android:id="@+id/emailTxt"
+                android:id="@+id/txtEmail"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/edittext_background"
                 android:drawableStart="@drawable/email"
                 android:textColorHint="#603a91"
                 android:ems="10"
-                android:inputType="textPersonName"
+                android:inputType="textEmailAddress"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="32dp"
@@ -121,7 +121,7 @@
 
 
             <TextView
-                android:id="@+id/textNoteTxt"
+                android:id="@+id/txtSignInApp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"

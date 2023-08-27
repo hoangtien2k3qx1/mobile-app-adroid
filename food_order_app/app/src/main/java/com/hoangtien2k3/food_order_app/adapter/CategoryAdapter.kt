@@ -1,4 +1,4 @@
-package com.hoangtien2k3.food_order_app.Adapter
+package com.hoangtien2k3.food_order_app.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.hoangtien2k3.food_order_app.Domain.CategoryDomain
+import com.hoangtien2k3.food_order_app.model.CategoryDomain
 import com.hoangtien2k3.food_order_app.R
 
 class CategoryAdapter(private val categoryDomainList: ArrayList<CategoryDomain>) : RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
