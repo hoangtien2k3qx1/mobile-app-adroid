@@ -6,15 +6,14 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.hoangtien2k3.food_order_app.BaseActivity
+import com.hoangtien2k3.food_order_app.data.BaseActivity
 import com.hoangtien2k3.food_order_app.R
 import com.hoangtien2k3.food_order_app.databinding.ActivitySignInBinding
 
 
 class SignInActivity : BaseActivity() {
-//    retrofit ,Gson, mvvm , view model, lifecycle activity và fragment
+//    retrofit , Gson, mvvm , view model, lifecycle activity và fragment
 
 
 
@@ -47,7 +46,6 @@ class SignInActivity : BaseActivity() {
 
         // check login email and password
         binding.btnSignInApp.setOnClickListener {
-
             val email = binding.txtEmail.text.toString().trim()
             val password = binding.txtPassword.text.toString().trim()
 
@@ -64,7 +62,7 @@ class SignInActivity : BaseActivity() {
                 firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener{
                     if (it.isSuccessful){
                         Toast.makeText(this, "Dang nhap thanh cong", Toast.LENGTH_SHORT).show()
-                        startActivity(Intent(this, IntroActivity::class.java))
+                        startActivity(Intent(this, MainActivity::class.java))
                     } else {
                         Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
                     }
@@ -72,8 +70,8 @@ class SignInActivity : BaseActivity() {
             } else {
                 Toast.makeText(this, "Nhập đầy đủ username và password.", Toast.LENGTH_SHORT).show()
             }
-
         }
+
 
         binding.apply {
             txtEmail.addTextChangedListener(object : TextWatcher {
@@ -93,8 +91,8 @@ class SignInActivity : BaseActivity() {
                 }
             })
         }
-
     }
+
 
     // Quay lại trang đăng ký tài khoản
     private fun signUpFrom() {

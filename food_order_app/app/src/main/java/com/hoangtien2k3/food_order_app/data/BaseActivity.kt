@@ -1,4 +1,4 @@
-package com.hoangtien2k3.food_order_app
+package com.hoangtien2k3.food_order_app.data
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

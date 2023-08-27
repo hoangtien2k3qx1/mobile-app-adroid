@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide
 import com.hoangtien2k3.food_order_app.model.CategoryDomain
 import com.hoangtien2k3.food_order_app.R
 
-class CategoryAdapter(private val categoryDomainList: ArrayList<CategoryDomain>) : RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
+class CategoryAdapter(private val categoryDomainList: List<CategoryDomain>) : RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val categoryName: TextView = itemView.findViewById(R.id.categoryName)
@@ -45,7 +45,11 @@ class CategoryAdapter(private val categoryDomainList: ArrayList<CategoryDomain>)
         holder.mainLayout.setBackgroundResource(picResId.first)
 
         if (picResId.second.isNotEmpty()) {
-            val drawableResourceId = holder.itemView.context.resources.getIdentifier(picResId.second, "drawable", holder.itemView.context.packageName)
+            val drawableResourceId = holder
+                .itemView
+                .context
+                .resources
+                .getIdentifier(picResId.second, "drawable", holder.itemView.context.packageName)
 
             Glide.with(holder.itemView.context)
                 .load(drawableResourceId)

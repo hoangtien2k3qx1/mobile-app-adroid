@@ -11,4 +11,5 @@ class FoodyApplication : Application() {
         Log.d("App","onCreate application")
         FirebaseApp.initializeApp(applicationContext)
     }
+
 }

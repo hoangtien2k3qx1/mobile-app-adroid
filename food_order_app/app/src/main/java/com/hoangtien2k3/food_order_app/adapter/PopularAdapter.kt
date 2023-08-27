@@ -12,7 +12,7 @@ import com.hoangtien2k3.food_order_app.activity.ShowDetailActivity
 import com.hoangtien2k3.food_order_app.model.FoodDomain
 import com.hoangtien2k3.food_order_app.R
 
-class PopularAdapter(private val popularFoodDomainList: List<FoodDomain>,private val onClickItem : (foodDomain : FoodDomain)-> Unit) : RecyclerView.Adapter<PopularAdapter.ViewHolder>() {
+class PopularAdapter(private val popularFoodDomainList: List<FoodDomain>, private val onClickItem : (foodDomain : FoodDomain)-> Unit) : RecyclerView.Adapter<PopularAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title: TextView = itemView.findViewById(R.id.title)
@@ -34,9 +34,13 @@ class PopularAdapter(private val popularFoodDomainList: List<FoodDomain>,private
 
         val itemCurrent = popularFoodDomainList[position]
         holder.title.text = itemCurrent.title
-        holder.fee.text = "%.3f".format(itemCurrent.fee)
+        holder.fee.text = String.format("%.3f", itemCurrent.fee)
 
-        val drawableResourceId = holder.itemView.context.resources.getIdentifier(itemCurrent.pic, "drawable", holder.itemView.context.packageName)
+        val drawableResourceId = holder
+            .itemView
+            .context
+            .resources
+            .getIdentifier(itemCurrent.pic, "drawable", holder.itemView.context.packageName)
 
         Glide.with(holder.itemView.context)
             .load(drawableResourceId)

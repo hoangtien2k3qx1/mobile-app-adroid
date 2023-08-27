@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Food_order_app"
         tools:targetApi="31">
         <activity
-            android:name=".activity.IntroActivity"
+            android:name=".activity.SignInActivity"
             android:exported="false" />
         <activity
             android:name=".activity.SignUpActivity"
@@ -29,7 +29,7 @@
             android:name=".activity.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.SignInActivity"
+            android:name=".activity.IntroActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
