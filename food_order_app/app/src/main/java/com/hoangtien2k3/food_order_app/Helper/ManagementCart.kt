@@ -34,8 +34,9 @@ class ManagementCart {
         }
 
         tinyDB.putListObject("CartList", listFood)
-        Toast.makeText(context, "Đã thêm Cart", Toast.LENGTH_LONG).show()
 
+        // in thông báo lên màn hình
+        Toast.makeText(context, "Đã thêm vào giỏ hàng.", Toast.LENGTH_LONG).show()
     }
 
     public fun getListCart(): ArrayList<FoodDomain> {

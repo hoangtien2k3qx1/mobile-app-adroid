@@ -44,7 +44,6 @@ class ShowDetailActivity : AppCompatActivity() {
             .into(picFood)
 
         titleTxt.text = object1.title
-//        feeTxt.text = object1.fee.toString()
         feeTxt.text = String.format("%.3f", object1.fee).replace(",", ".")
         description.text = object1.description
         numberOrderTxt.text = numberOrder.toString()
