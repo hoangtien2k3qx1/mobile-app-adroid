@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">food_order_app</string>
+    <string name="email_failed">Email login khong thanh cong</string>
 </resources>

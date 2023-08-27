@@ -1,20 +1,21 @@
 package com.hoangtien2k3.food_order_app.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.LinearLayout
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.hoangtien2k3.food_order_app.DataInitHome
+import com.hoangtien2k3.food_order_app.R
 import com.hoangtien2k3.food_order_app.adapter.CategoryAdapter
 import com.hoangtien2k3.food_order_app.adapter.PopularAdapter
 import com.hoangtien2k3.food_order_app.model.CategoryDomain
 import com.hoangtien2k3.food_order_app.model.FoodDomain
-import com.hoangtien2k3.food_order_app.R
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var adapter: RecyclerView.Adapter<*>
-    private lateinit var adapter2: RecyclerView.Adapter<*>
+    private lateinit var adapter: CategoryAdapter
+    private lateinit var adapter2: PopularAdapter
     private lateinit var recyclerViewCategoryList: RecyclerView
     private lateinit var recyclerViewPopularList: RecyclerView
 
@@ -45,7 +46,10 @@ class MainActivity : AppCompatActivity() {
         recyclerViewCategoryList = findViewById(R.id.recyclerView1)
         recyclerViewCategoryList.layoutManager = linearLayoutManager
 
-        var category: ArrayList<CategoryDomain> = ArrayList<CategoryDomain>()
+        val category: ArrayList<CategoryDomain> = ArrayList()
+
+        val cate = mutableListOf<CategoryDomain>()
+
         category.add(CategoryDomain("Pizza", "cat_1"))
         category.add(CategoryDomain("Bánh", "cat_2"))
         category.add(CategoryDomain("Trái", "cat_3"))
@@ -61,16 +65,28 @@ class MainActivity : AppCompatActivity() {
         recyclerViewPopularList = findViewById(R.id.recyclerView2)
         recyclerViewPopularList.layoutManager = linearLayoutManager
 
-        var foodList: ArrayList<FoodDomain>  = ArrayList<FoodDomain>()
-        foodList.add(FoodDomain("Bánh Pizza", "pizza1", "bánh pizza là loại bánh cực kỳ thơm ngon và hấp dẫn.", 975.0));
-        foodList.add(FoodDomain("Ngũ cốc", "pizza1", "bánh pizza là loại bánh cực kỳ thơm ngon và hấp dẫn.", 15.0));
-        foodList.add(FoodDomain("Nước uống", "cat_2", "bánh pizza là loại bánh cực kỳ thơm ngon và hấp dẫn.", 46.0));
-        foodList.add(FoodDomain("Trái cây", "pop_1", "bánh pizza là loại bánh cực kỳ thơm ngon và hấp dẫn.", 27.0));
-        foodList.add(FoodDomain("CoCa-Cola", "pop_2", "bánh pizza là loại bánh cực kỳ thơm ngon và hấp dẫn.", 75.0));
+//        val foodList: ArrayList<FoodDomain>  = ArrayList<FoodDomain>()
+//        foodList.add(FoodDomain("Bánh Pizza", "pizza1", "bánh pizza là loại bánh cực kỳ thơm ngon và hấp dẫn.", 975.0));
+//        foodList.add(FoodDomain("Ngũ cốc", "pizza1", "bánh pizza là loại bánh cực kỳ thơm ngon và hấp dẫn.", 15.0));
+//        foodList.add(FoodDomain("Nước uống", "cat_2", "bánh pizza là loại bánh cực kỳ thơm ngon và hấp dẫn.", 46.0));
+//        foodList.add(FoodDomain("Trái cây", "pop_1", "bánh pizza là loại bánh cực kỳ thơm ngon và hấp dẫn.", 27.0));
+//        foodList.add(FoodDomain("CoCa-Cola", "pop_2", "bánh pizza là loại bánh cực kỳ thơm ngon và hấp dẫn.", 75.0));
 
-        adapter2 = PopularAdapter(foodList)
+        adapter2 = PopularAdapter(DataInitHome.listDemoHome, onClickItem = ::startDetailPopular)
+
         recyclerViewPopularList.adapter = adapter2
 
+    }
+
+    private fun startDetailPopular(item : FoodDomain) {
+        val intent = Intent(this, ShowDetailActivity::class.java).apply {
+            putExtra(/* name = */ POPULAR_ITEM_KEY, /* value = */ item)
+        }
+        startActivity(intent)
+    }
+
+    companion object {
+        private const val POPULAR_ITEM_KEY = "object1"
     }
 
 }

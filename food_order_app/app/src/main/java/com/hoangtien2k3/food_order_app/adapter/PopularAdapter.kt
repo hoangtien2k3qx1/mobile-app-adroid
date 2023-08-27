@@ -12,7 +12,7 @@ import com.hoangtien2k3.food_order_app.activity.ShowDetailActivity
 import com.hoangtien2k3.food_order_app.model.FoodDomain
 import com.hoangtien2k3.food_order_app.R
 
-class PopularAdapter(private val popularFoodDomainList: ArrayList<FoodDomain>) : RecyclerView.Adapter<PopularAdapter.ViewHolder>() {
+class PopularAdapter(private val popularFoodDomainList: List<FoodDomain>,private val onClickItem : (foodDomain : FoodDomain)-> Unit) : RecyclerView.Adapter<PopularAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title: TextView = itemView.findViewById(R.id.title)
@@ -22,8 +22,7 @@ class PopularAdapter(private val popularFoodDomainList: ArrayList<FoodDomain>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val inflater = LayoutInflater.from(parent.context)
-        val itemView = inflater.inflate(R.layout.viewholder_popular, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.viewholder_popular, parent, false)
         return ViewHolder(itemView)
     }
 
@@ -32,21 +31,19 @@ class PopularAdapter(private val popularFoodDomainList: ArrayList<FoodDomain>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.title.text = popularFoodDomainList[position].title
-        holder.fee.text = "%.3f".format(popularFoodDomainList[position].fee)
 
-        val drawableResourceId = holder.itemView.context.resources.getIdentifier(popularFoodDomainList[position].pic, "drawable", holder.itemView.context.packageName)
+        val itemCurrent = popularFoodDomainList[position]
+        holder.title.text = itemCurrent.title
+        holder.fee.text = "%.3f".format(itemCurrent.fee)
+
+        val drawableResourceId = holder.itemView.context.resources.getIdentifier(itemCurrent.pic, "drawable", holder.itemView.context.packageName)
 
         Glide.with(holder.itemView.context)
             .load(drawableResourceId)
             .into(holder.pic)
 
         holder.addBtn.setOnClickListener {
-            val intent = Intent(holder.itemView.context, ShowDetailActivity::class.java)
-            intent.putExtra("object1", popularFoodDomainList[position])
-
-            holder.itemView.context.startActivity(intent)
-
+            onClickItem.invoke(itemCurrent)
         }
 
     }
