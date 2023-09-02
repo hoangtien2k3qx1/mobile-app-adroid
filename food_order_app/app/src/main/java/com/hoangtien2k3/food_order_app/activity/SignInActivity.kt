@@ -1,13 +1,12 @@
 package com.hoangtien2k3.food_order_app.activity
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import com.hoangtien2k3.food_order_app.data.BaseActivity
+import com.hoangtien2k3.food_order_app.authen.BaseActivity
 import com.hoangtien2k3.food_order_app.R
 import com.hoangtien2k3.food_order_app.databinding.ActivitySignInBinding
 
@@ -52,7 +51,7 @@ class SignInActivity : BaseActivity() {
             if (!isValidEmail) {
                 Toast.makeText(
                     applicationContext,
-                    "Email hoặc Password không đúng !!!",
+                    resources.getString(R.string.email_and_password_failed),
                     Toast.LENGTH_SHORT
                 ).show()
                 return@setOnClickListener
@@ -61,14 +60,14 @@ class SignInActivity : BaseActivity() {
             if (email.isNotEmpty() && password.isNotEmpty()){
                 firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener{
                     if (it.isSuccessful){
-                        Toast.makeText(this, "Dang nhap thanh cong", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, resources.getString(R.string.login_successfully), Toast.LENGTH_SHORT).show()
                         startActivity(Intent(this, MainActivity::class.java))
                     } else {
                         Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
                     }
                 }
             } else {
-                Toast.makeText(this, "Nhập đầy đủ username và password.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, resources.getString(R.string.input_full_username_and_password), Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -82,7 +81,6 @@ class SignInActivity : BaseActivity() {
                     validate.text = ""
                     isValidEmail = emailPattern.matches(binding.txtEmail.text.toString().trim()) && s?.length ?: 0 > 0
                     if (!isValidEmail) {
-                        validate.setTextColor(Color.rgb(255, 0, 0))
                         validate.text = resources.getString(R.string.email_failed)
                     }
                 }

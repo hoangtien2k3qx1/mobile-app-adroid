@@ -8,28 +8,22 @@ import com.bumptech.glide.Glide
 import com.hoangtien2k3.food_order_app.model.FoodDomain
 import com.hoangtien2k3.food_order_app.helper.ManagementCart
 import com.hoangtien2k3.food_order_app.R
+import com.hoangtien2k3.food_order_app.databinding.ActivityShowDetailBinding
 
 class ShowDetailActivity : AppCompatActivity() {
 
-    private lateinit var addToCartBtn: TextView
-    private lateinit var titleTxt: TextView
-    private lateinit var feeTxt: TextView
-    private lateinit var description: TextView
-    private lateinit var numberOrderTxt: TextView
-    private lateinit var plusBtn: ImageView
-    private lateinit var minusBtn: ImageView
-    private lateinit var picFood: ImageView
+    private lateinit var binding: ActivityShowDetailBinding
+
     private lateinit var object1: FoodDomain
     private var numberOrder = 1
     private lateinit var managementCart: ManagementCart
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_show_detail)
+        binding = ActivityShowDetailBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         managementCart = ManagementCart(this)
-
-        initView()
         getBundle()
     }
 
@@ -41,39 +35,29 @@ class ShowDetailActivity : AppCompatActivity() {
 
         Glide.with(this)
             .load(drawableResourceId)
-            .into(picFood)
+            .into(binding.picFood)
 
-        titleTxt.text = object1.title
-        feeTxt.text = String.format("%.3f", object1.fee).replace(",", ".")
-        description.text = object1.description
-        numberOrderTxt.text = numberOrder.toString()
+        binding.titleTxt.text = object1.title
+        binding.priceTxt.text = String.format("%.3f", object1.fee).replace(",", ".")
+        binding.descriptionTxt.text = object1.description
+        binding.numberOrderTxt.text = numberOrder.toString()
 
-        plusBtn.setOnClickListener {
+        binding.plusBtn.setOnClickListener {
             numberOrder += 1
-            numberOrderTxt.text = numberOrder.toString()
+            binding.numberOrderTxt.text = numberOrder.toString()
         }
 
-        minusBtn.setOnClickListener {
+        binding.minusBtn.setOnClickListener {
             if (numberOrder > 1) {
                 numberOrder -= 1
-                numberOrderTxt.text = numberOrder.toString()
+                binding.numberOrderTxt.text = numberOrder.toString()
             }
         }
 
-        addToCartBtn.setOnClickListener {
+        binding.addToCartBtn.setOnClickListener {
             object1.numberInCart = numberOrder
             managementCart.insertFood(object1)
         }
     }
 
-    private fun initView() {
-        addToCartBtn = findViewById(R.id.addToCartBtn)
-        titleTxt = findViewById(R.id.titleTxt)
-        feeTxt = findViewById(R.id.priceTxt)
-        description = findViewById(R.id.descriptionTxt)
-        numberOrderTxt = findViewById(R.id.numberOrderTxt)
-        plusBtn = findViewById(R.id.plusBtn)
-        minusBtn = findViewById(R.id.minusBtn)
-        picFood = findViewById(R.id.picFood)
-    }
 }

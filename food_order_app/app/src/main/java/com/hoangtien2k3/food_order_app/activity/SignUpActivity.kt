@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.hoangtien2k3.food_order_app.R
 import com.hoangtien2k3.food_order_app.databinding.ActivitySignUpBinding
 
 class SignUpActivity : AppCompatActivity() {
@@ -33,11 +34,11 @@ class SignUpActivity : AppCompatActivity() {
             val nextSignIn = binding.txtSignInApp.text.toString()
 
             if (username.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
-                Toast.makeText(this, "Nhập đầy đủ thông tin.", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, resources.getString(R.string.input_full_information), Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
             if (!confirmPassword.equals(password)) {
-                Toast.makeText(this, "Mật khẩu không khớp !!!", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, resources.getString(R.string.password_failed), Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
 
@@ -52,10 +53,10 @@ class SignUpActivity : AppCompatActivity() {
                         }
                     }
                 } else {
-                    Toast.makeText(this, "Mật khẩu không chính xác.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, resources.getString(R.string.password_failed), Toast.LENGTH_SHORT).show()
                 }
             } else {
-                Toast.makeText(this, "Nhập đầy đủ username và password.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, resources.getString(R.string.input_full_username_and_password), Toast.LENGTH_SHORT).show()
             }
 
         }

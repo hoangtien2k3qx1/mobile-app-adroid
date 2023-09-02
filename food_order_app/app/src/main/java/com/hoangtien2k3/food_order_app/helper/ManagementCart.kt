@@ -20,7 +20,7 @@ class ManagementCart {
 
         var n = 0
         for(i in 0 until listFood.size) {
-            if (listFood.get(i).title.equals(item.title)) {
+            if (listFood[i].title.equals(item.title)) {
                 existAlready = true;
                 n = i
                 break
@@ -28,7 +28,7 @@ class ManagementCart {
         }
 
         if (existAlready) {
-            listFood.get(n).numberInCart = item.numberInCart
+            listFood[n].numberInCart = item.numberInCart
         } else {
             listFood.add(item)
         }

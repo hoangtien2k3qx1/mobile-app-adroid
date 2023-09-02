@@ -33,6 +33,10 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/cartView"
+
+                tools:listitem="@layout/viewholder_cart"
+                tools:itemCount="2"
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
@@ -157,7 +161,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="16dp"
-                android:background="@drawable/orange_button"
+                android:background="@drawable/bg_orange_button"
                 android:gravity="center"
                 android:text="Kiểm tra"
                 android:textColor="#ffffff"

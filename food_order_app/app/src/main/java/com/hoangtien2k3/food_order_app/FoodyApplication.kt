@@ -9,6 +9,7 @@ class FoodyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         Log.d("App","onCreate application")
+        // using FirebaseApp initalization
         FirebaseApp.initializeApp(applicationContext)
     }
 

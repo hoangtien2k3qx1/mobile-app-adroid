@@ -6,11 +6,10 @@ import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.hoangtien2k3.food_order_app.DataInitHome
+import com.hoangtien2k3.food_order_app.repository.DataInitHome
 import com.hoangtien2k3.food_order_app.R
 import com.hoangtien2k3.food_order_app.adapter.CategoryAdapter
 import com.hoangtien2k3.food_order_app.adapter.PopularAdapter
-import com.hoangtien2k3.food_order_app.model.CategoryDomain
 import com.hoangtien2k3.food_order_app.model.FoodDomain
 
 class MainActivity : AppCompatActivity() {
@@ -29,16 +28,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun bottomNavigation() {
-        val cartBtn: LinearLayout = findViewById(R.id.cartBtn)
-        val homeBtn: LinearLayout = findViewById(R.id.homeBtn)
 
-        cartBtn.setOnClickListener {
+        findViewById<LinearLayout>(R.id.cartBtn).setOnClickListener {
             startActivity(Intent(this, CartListActivity::class.java))
         }
 
-        homeBtn.setOnClickListener {
+        findViewById<LinearLayout>(R.id.homeBtn).setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }
+
+        findViewById<LinearLayout>(R.id.supportBtn).setOnClickListener {
+            startActivity(Intent(this, TestFragmentActivity::class.java))
+        }
+
     }
 
     private fun recyclerViewCategory() {

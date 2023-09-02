@@ -15,15 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.341"
-        app:srcCompat="@drawable/background_login_app" />
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/top_background"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        app:srcCompat="@drawable/bg_background_login_app" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -41,7 +33,7 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="100dp"
                 android:layout_marginBottom="80dp"
-                android:text="Welcome Back"
+                android:text="Login Account"
                 android:textColor="#603a91"
                 android:textSize="40sp"
                 android:textStyle="bold" />
@@ -50,7 +42,7 @@
                 android:id="@+id/txtEmail"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@drawable/edittext_background"
+                android:background="@drawable/bg_edittext_background"
                 android:drawableStart="@drawable/email"
                 android:textColorHint="#603a91"
                 android:ems="10"
@@ -76,7 +68,7 @@
                 android:id="@+id/txtPassword"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@drawable/edittext_background"
+                android:background="@drawable/bg_edittext_background"
                 android:drawableStart="@drawable/password"
                 android:textColorHint="#603a91"
                 android:ems="10"
@@ -108,7 +100,7 @@
                 android:textSize="16dp"
                 android:layout_marginTop="16dp"
                 android:drawablePadding="16dp"
-                android:background="@drawable/btn_background_login1"
+                android:background="@drawable/bg_btn_background_login1"
                 android:drawableStart="@drawable/google"
                 android:text="Sign up with google"/>
 
@@ -124,8 +116,9 @@
                 android:textSize="16dp"
                 android:layout_marginTop="16dp"
                 android:drawablePadding="16dp"
-                android:background="@drawable/btn_background_login1"
+                android:background="@drawable/bg_btn_background_login1"
                 android:drawableStart="@drawable/facebook"
+                android:inputType="textPersonName"
                 android:text="Sign up with facebook"/>
 
             <TextView

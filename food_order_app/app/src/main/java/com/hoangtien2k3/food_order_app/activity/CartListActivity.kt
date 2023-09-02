@@ -13,6 +13,7 @@ import com.hoangtien2k3.food_order_app.adapter.CartListAdapter
 import com.hoangtien2k3.food_order_app.helper.ManagementCart
 import com.hoangtien2k3.food_order_app.`interface`.ChangeNumberItemsListener
 import com.hoangtien2k3.food_order_app.R
+import com.hoangtien2k3.food_order_app.databinding.ActivityShowDetailBinding
 
 class CartListActivity : AppCompatActivity() {
     private lateinit var adapter: RecyclerView.Adapter<*>
@@ -60,7 +61,6 @@ class CartListActivity : AppCompatActivity() {
         totalTxt = findViewById(R.id.totalTxt)
         emptyTxt = findViewById(R.id.emptyTxt)
         scrollView = findViewById(R.id.scrollView)
-        recyclerViewList = findViewById(R.id.cartView)
     }
 
     private fun initList() {
@@ -73,6 +73,7 @@ class CartListActivity : AppCompatActivity() {
             }
         })
 
+        // nếu trong Cart không có sản phẩm thì Text "Không Có Sản Phẩm Nào" sẽ được show lên layout
         recyclerViewList.adapter = adapter
         if (managementCart.getListCart().isEmpty()) {
             emptyTxt.visibility = View.VISIBLE

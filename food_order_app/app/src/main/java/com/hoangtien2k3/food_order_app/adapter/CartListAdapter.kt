@@ -68,12 +68,17 @@ class CartListAdapter() : RecyclerView.Adapter<CartListAdapter.ViewHolder>() {
         holder.totalEachItem.text = totalAmount
         holder.num.text = currentFood.numberInCart.toString()
 
-        val drawableResourceId = holder.itemView.context.resources.getIdentifier(currentFood.pic, "drawable", holder.itemView.context.packageName)
+        val drawableResourceId = holder
+            .itemView
+            .context
+            .resources
+            .getIdentifier(currentFood.pic, "drawable", holder.itemView.context.packageName)
 
         Glide.with(holder.itemView.context)
             .load(drawableResourceId)
             .into(holder.pic)
 
+        // tăng số lượng sản phẩm, nếu sản phẩm về 0 thì đồng thời remove
         holder.plusItem.setOnClickListener {
             managementCart.plusNumberFood(foodDomainList, position, object : ChangeNumberItemsListener {
                 override fun changed() {
@@ -83,6 +88,7 @@ class CartListAdapter() : RecyclerView.Adapter<CartListAdapter.ViewHolder>() {
             })
         }
 
+        // desc number product in Cart, if product equals zero: remove
         holder.minusItem.setOnClickListener {
             managementCart.minusNumberFood(foodDomainList, position, object : ChangeNumberItemsListener {
                 override fun changed() {

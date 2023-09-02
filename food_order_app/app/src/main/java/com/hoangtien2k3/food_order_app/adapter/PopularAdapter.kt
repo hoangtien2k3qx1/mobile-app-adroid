@@ -22,7 +22,9 @@ class PopularAdapter(private val popularFoodDomainList: List<FoodDomain>, privat
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.viewholder_popular, parent, false)
+        val itemView = LayoutInflater
+            .from(parent.context)
+            .inflate(R.layout.viewholder_popular, parent, false)
         return ViewHolder(itemView)
     }
 
@@ -42,13 +44,20 @@ class PopularAdapter(private val popularFoodDomainList: List<FoodDomain>, privat
             .resources
             .getIdentifier(itemCurrent.pic, "drawable", holder.itemView.context.packageName)
 
+        // Glide: thư viện quản lý việc đẩy ảnh ...
         Glide.with(holder.itemView.context)
-            .load(drawableResourceId)
-            .into(holder.pic)
+            .load(drawableResourceId)  // Đường dẫn URL của hình ảnh
+            .into(holder.pic)          // ImageView để hiển thị hình ảnh
 
+
+        // thêm sản phẩm vào giỏ hàng
         holder.addBtn.setOnClickListener {
             onClickItem.invoke(itemCurrent)
         }
+
+
+
+
 
     }
 }

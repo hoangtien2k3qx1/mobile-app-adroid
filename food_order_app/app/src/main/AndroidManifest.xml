@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:name=".FoodyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -10,9 +11,23 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".FoodyApplication"
         android:theme="@style/Theme.Food_order_app"
         tools:targetApi="31">
+        <activity
+            android:name=".activity.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.UserInformationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.PaymentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.TestFragmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Test"
+            android:exported="false" />
         <activity
             android:name=".activity.SignInActivity"
             android:exported="false" />
@@ -26,7 +41,7 @@
             android:name=".activity.ShowDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".activity.CategoryActivity"
             android:exported="false" />
         <activity
             android:name=".activity.IntroActivity"

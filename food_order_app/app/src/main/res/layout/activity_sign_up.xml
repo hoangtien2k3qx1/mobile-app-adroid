@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.341"
-        app:srcCompat="@drawable/background_login_app" />
+        app:srcCompat="@drawable/bg_background_login_app" />
 
     <ImageView
         android:id="@+id/imageView9"
@@ -42,7 +42,7 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="80dp"
                 android:layout_marginBottom="80dp"
-                android:text="Welcome Back"
+                android:text="SignUp Account"
                 android:textColor="#603a91"
                 android:textSize="40sp"
                 android:textStyle="bold" />
@@ -51,7 +51,7 @@
                 android:id="@+id/txtUsernameAndEmail"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@drawable/edittext_background"
+                android:background="@drawable/bg_edittext_background"
                 android:drawableStart="@drawable/name"
                 android:textColorHint="#603a91"
                 android:ems="10"
@@ -67,7 +67,7 @@
                 android:id="@+id/txtPassword"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@drawable/edittext_background"
+                android:background="@drawable/bg_edittext_background"
                 android:drawableStart="@drawable/password"
                 android:textColorHint="#603a91"
                 android:ems="10"
@@ -83,7 +83,7 @@
                 android:id="@+id/txtConfirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@drawable/edittext_background"
+                android:background="@drawable/bg_edittext_background"
                 android:drawableStart="@drawable/password"
                 android:textColorHint="#603a91"
                 android:ems="10"
@@ -99,7 +99,7 @@
                 android:id="@+id/txtEmail"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@drawable/edittext_background"
+                android:background="@drawable/bg_edittext_background"
                 android:drawableStart="@drawable/email"
                 android:textColorHint="#603a91"
                 android:ems="10"
