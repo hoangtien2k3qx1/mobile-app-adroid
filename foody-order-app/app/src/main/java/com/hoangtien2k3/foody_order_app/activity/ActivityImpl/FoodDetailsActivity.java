@@ -26,13 +26,13 @@ import com.hoangtien2k3.foody_order_app.model.Restaurant;
 import java.util.ArrayList;
 
 public class FoodDetailsActivity extends AppCompatActivity implements FoodDetailsActivityImpl {
-    private ImageView image; // ảnh móm ăn đó
-    private LinearLayout layout_sizeS, layout_sizeM, layout_sizeL; // 3 kích thước món ăn đó
-    private TextView tvName, tvDescription, tvPrice,        // thông tin cơ bản về món ăn
+    private ImageView image, btnAddQuantity, btnSubQuantity;
+    private LinearLayout layout_sizeS, layout_sizeM, layout_sizeL, btnAddToCart, btnSavedFood;
+    private TextView tvName, tvDescription, tvPrice,
             tvRestaurantName, tvRestaurantAddress,
             tvPriceSizeS,tvPriceSizeM, tvPriceSizeL,
             tvQuantity;
-    private Button btnAddToCart, btnAddQuantity;
+//    private Button btnAddToCart, btnSavedFood;
     public static Integer userID; // lấy ra userId
     private static int quantity;
     public static FoodSize foodSize;    // lấy ra gias cả và kích thước
@@ -84,7 +84,10 @@ public class FoodDetailsActivity extends AppCompatActivity implements FoodDetail
         tvRestaurantAddress = findViewById(R.id.tvRestaurantAddress);
 
         btnAddToCart = findViewById(R.id.btnAddToCart);
+        btnSavedFood = findViewById(R.id.btnSavedFood);
+
         btnAddQuantity = findViewById(R.id.btnAddQuantity_Food);
+        btnSubQuantity = findViewById(R.id.btnSubQuantity_Food);
     }
 
     @Override
@@ -132,7 +135,7 @@ public class FoodDetailsActivity extends AppCompatActivity implements FoodDetail
 
 
         // lưu lại thông tin món ăn (fragment_save)
-        findViewById(R.id.btnSavedFood).setOnClickListener(view -> {
+        btnSavedFood.setOnClickListener(view -> {
             boolean addFoodSaved = dao.addFoodSaved(new FoodSaved(foodSize.getFoodId(), foodSize.getSize(), userID));
             if(addFoodSaved){
                 Toast.makeText(this, "Đã lưu thông tin món ăn!", Toast.LENGTH_SHORT).show();
@@ -149,8 +152,8 @@ public class FoodDetailsActivity extends AppCompatActivity implements FoodDetail
             tvPrice.setText(getTotalPrice());
         });
 
+
         // giảm số lượng món ăn
-        Button btnSubQuantity = findViewById(R.id.btnSubQuantity_Food);
         btnSubQuantity.setOnClickListener(view -> {
             if(quantity > 1){
                 quantity--;

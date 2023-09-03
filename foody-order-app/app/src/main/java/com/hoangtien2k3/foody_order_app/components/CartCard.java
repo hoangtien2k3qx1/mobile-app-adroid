@@ -16,16 +16,20 @@ import com.hoangtien2k3.foody_order_app.R;
 import com.hoangtien2k3.foody_order_app.activity.ActivityImpl.HomeActivity;
 import com.hoangtien2k3.foody_order_app.fragments.CartFragment;
 import com.hoangtien2k3.foody_order_app.repositoryInit.DatabaseHandler;
-import com.hoangtien2k3.foody_order_app.fragments.ChatFragment;
 import com.hoangtien2k3.foody_order_app.model.Food;
 import com.hoangtien2k3.foody_order_app.model.OrderDetail;
 
-public class CartCard extends LinearLayout {
+public class CartCard extends LinearLayout implements BaseComponent {
     private Food food;
     private String restaurantName;
     private OrderDetail card;
     private boolean activateControl;
     private int quantity;
+    private ImageView image;
+    private TextView tvName, tvSize, tvRestaurantName, tvPrice, tvQuantity;
+    private ImageView btnSub, btnAdd, btnDelete;
+    private LinearLayout layout;
+
 
     public CartCard(Context context) {
         super(context);
@@ -50,27 +54,32 @@ public class CartCard extends LinearLayout {
         initControl(context);
     }
 
+    @Override
+    public void initUI() {
+        image = findViewById(R.id.imageCartFood);
+        tvName = findViewById(R.id.tvFoodNameCart);
+        tvSize = findViewById(R.id.tvFoodSizeCart);
+        tvRestaurantName = findViewById(R.id.tvRestaurantNameCart);
+        tvPrice = findViewById(R.id.tvFoodPriceCart);
+        tvQuantity = findViewById(R.id.tvFoodQuantity_Cart); // Số lượng món ăn
+        btnSub = findViewById(R.id.btnSubQuantity_Cart);
+        btnAdd = findViewById(R.id.btnAddQuantity_Cart);
+        btnDelete = findViewById(R.id.btnDeleteCartItem);
+        layout = findViewById(R.id.layout_btn_delete);
+    }
+
+    @Override
     @SuppressLint("SetTextI18n")
-    private void initControl(Context context){
+    public void initControl(Context context) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.view_cart_card, this);
+
+        initUI(); // init UI
         quantity = card.getQuantity();
-
-        ImageView image = findViewById(R.id.imageCartFood);
-        TextView tvName = findViewById(R.id.tvFoodNameCart);
-        TextView tvSize = findViewById(R.id.tvFoodSizeCart);
-        TextView tvRestaurantName = findViewById(R.id.tvRestaurantNameCart);
-        TextView tvPrice = findViewById(R.id.tvFoodPriceCart);
-        TextView tvQuantity = findViewById(R.id.tvFoodQuantity_Cart); // Số lượng món ăn
-        Button btnSub = findViewById(R.id.btnSubQuantity_Cart);
-        Button btnAdd = findViewById(R.id.btnAddQuantity_Cart);
-        Button btnDelete = findViewById(R.id.btnDeleteCartItem);
-        LinearLayout layout = findViewById(R.id.layout_btn_delete);
-
 
         // giảm số lượng món ăn xuống
         btnSub.setOnClickListener(view -> {
-            if(quantity > 1){
+            if (quantity > 1) {
                 quantity--;
                 tvQuantity.setText("" + quantity);
                 card.setQuantity(quantity);
@@ -92,7 +101,7 @@ public class CartCard extends LinearLayout {
             AlertDialog.Builder dialog = new AlertDialog.Builder(getContext()); // khai báo 1 dialog
             dialog.setMessage("Bạn có muốn xóa món " + food.getName() + " không ?");
             dialog.setPositiveButton("Có", (dialogInterface, i) -> {
-                if(HomeActivity.dao.deleteOrderDetailByOrderIdAndFoodId(card.getOrderId(), food.getId())){
+                if (HomeActivity.dao.deleteOrderDetailByOrderIdAndFoodId(card.getOrderId(), food.getId())) {
 //                    ChatFragment.cartContainer.removeView(this);
                     CartFragment.cartContainer.removeView(this); // xóa view đó (hay là xóa món ăn đó khỏi giỏ hàng)
 
@@ -101,13 +110,13 @@ public class CartCard extends LinearLayout {
                     Toast.makeText(context, "Gặp lỗi khi xóa thông tin!!!!", Toast.LENGTH_SHORT).show();
                 }
             });
-            dialog.setNegativeButton("Không", (dialogInterface, i) -> {});
+            dialog.setNegativeButton("Không", (dialogInterface, i) -> {
+            });
             dialog.show();
         });
 
 
-
-        if(!activateControl) {
+        if (!activateControl) {
             btnDelete.setVisibility(GONE);
             layout.setBackgroundColor(Color.rgb(255, 70, 70));
             btnAdd.setEnabled(activateControl);
@@ -117,7 +126,7 @@ public class CartCard extends LinearLayout {
         // Set information for cart card
         image.setImageBitmap(DatabaseHandler.convertByteArrayToBitmap(food.getImage()));
         tvName.setText(food.getName());
-        switch (card.getSize()){
+        switch (card.getSize()) {
             case 1:
                 tvSize.setText("Size S");
                 break;
@@ -133,7 +142,7 @@ public class CartCard extends LinearLayout {
         tvQuantity.setText("" + quantity);
     }
 
-    private String getRoundPrice(Double price){
+    private String getRoundPrice(Double price) {
         return Math.round(price) + " VNĐ";
     }
 }

@@ -90,7 +90,7 @@ public class DeliveryFragment extends Fragment {
 
 
     ////////////////////////////
-    private void referencesComponent() {
+    public void referencesComponent() {
         LoadOrder("coming");
     }
 

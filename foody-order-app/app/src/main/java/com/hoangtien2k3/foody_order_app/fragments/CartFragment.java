@@ -96,24 +96,24 @@ public class CartFragment extends Fragment {
 
     ////////////////////////////
     private void referencesComponent() {
-
         LoadOrder("craft"); // load thông tin giỏ hàng lên LinearLayout
-
         Button btnThanhToan = mainView.findViewById(R.id.btnThanhToan1);
         btnThanhToan.setOnClickListener(view -> {
-            if (!status.equals("craft"))
-                return;
+            if (!status.equals("craft")) return;
 
             Cursor cursor = HomeActivity.dao.getCart(HomeActivity.user.getId());
-            if (!cursor.moveToFirst())
-                return;
+            if (!cursor.moveToFirst()) return;
 
             PaymentActivity.user = HomeActivity.user;
             Intent intent = new Intent(getActivity(), PaymentActivity.class);
             intent.putExtra("orderId", cursor.getInt(0));
             startActivity(intent);
-        });
 
+
+            // load lại phần đơn hàng vận chuyển
+            DeliveryFragment deliveryFragmentReFress = new DeliveryFragment();
+            deliveryFragmentReFress.referencesComponent();
+        });
     }
 
     private void LoadOrder(String type) {
@@ -122,9 +122,7 @@ public class CartFragment extends Fragment {
 
         Cursor cursor = HomeActivity.dao.getCart(HomeActivity.user.getId());
         if (!cursor.moveToFirst()) return;
-
         cursor.moveToFirst(); // trỏ đến vị trí đầu tiên
-
         ArrayList<OrderDetail> orderDetailArrayList = HomeActivity.dao.getCartDetailList(cursor.getInt(0));
         if (orderDetailArrayList.size() > 0) {
             Food food;
@@ -137,5 +135,4 @@ public class CartFragment extends Fragment {
             }
         }
     }
-
 }

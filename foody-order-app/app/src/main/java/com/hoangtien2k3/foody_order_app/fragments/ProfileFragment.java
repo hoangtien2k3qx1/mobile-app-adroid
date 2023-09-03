@@ -1,5 +1,6 @@
 package com.hoangtien2k3.foody_order_app.fragments;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -13,7 +14,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.hoangtien2k3.foody_order_app.R;
+import com.hoangtien2k3.foody_order_app.activity.ActivityImpl.CartViewPagerActivity;
 import com.hoangtien2k3.foody_order_app.activity.ActivityImpl.HomeActivity;
+import com.hoangtien2k3.foody_order_app.activity.ActivityImpl.SignInActivity;
 import com.hoangtien2k3.foody_order_app.activity.ActivityImpl.UserInformationActivity;
 
 import java.util.Objects;
@@ -80,21 +83,21 @@ public class ProfileFragment extends Fragment {
 
         LinearLayout payment = mainView.findViewById(R.id.account_btn_layout_payment);
         payment.setOnClickListener(view -> {
-            intent = new Intent(getActivity(), HomeActivity.class);
+            intent = new Intent(getActivity(), CartViewPagerActivity.class);
             intent.putExtra("request", "payment");
             startActivity(intent);
         });
 
         LinearLayout history = mainView.findViewById(R.id.account_btn_layout_history);
         history.setOnClickListener(view -> {
-            intent = new Intent(getActivity(), HomeActivity.class);
+            intent = new Intent(getActivity(), CartViewPagerActivity.class);
             intent.putExtra("request", "history");
             startActivity(intent);
         });
 
         LinearLayout check = mainView.findViewById(R.id.account_btn_layout_check);
         check.setOnClickListener(view -> {
-            intent = new Intent(getActivity(), HomeActivity.class);
+            intent = new Intent(getActivity(), CartViewPagerActivity.class);
             intent.putExtra("request", "check");
             startActivity(intent);
         });
@@ -110,10 +113,15 @@ public class ProfileFragment extends Fragment {
 
         LinearLayout logout = mainView.findViewById(R.id.account_btn_layout_logout);
         logout.setOnClickListener(view -> {
-            Toast.makeText(this.getActivity(),
-                    "Đã đăng xuất khỏi hệ thống!",
-                    Toast.LENGTH_SHORT).show();
-            requireActivity().finish();
+            AlertDialog.Builder dialog = new AlertDialog.Builder(getContext());
+            dialog.setMessage("Bạn có muốn đăng xuất tài khoản ?");
+            dialog.setPositiveButton("Có", (dialogInterface, i) -> {
+                Toast.makeText(this.getActivity(), "Đã đăng xuất khỏi hệ thống!", Toast.LENGTH_SHORT).show();
+                requireActivity().finish();
+                startActivity(new Intent(getActivity(), SignInActivity.class));
+            });
+            dialog.setNegativeButton("Không", (dialogInterface, i) -> {});
+            dialog.show();
         });
 
         TextView txtUser_name = mainView.findViewById(R.id.account_user_name);

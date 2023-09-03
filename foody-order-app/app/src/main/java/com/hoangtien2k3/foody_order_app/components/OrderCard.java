@@ -13,8 +13,10 @@ import com.hoangtien2k3.foody_order_app.model.Notify;
 import com.hoangtien2k3.foody_order_app.model.NotifyToUser;
 import com.hoangtien2k3.foody_order_app.model.Order;
 
-public class OrderCard extends LinearLayout {
+public class OrderCard extends LinearLayout implements BaseComponent{
     private Order order;
+    private TextView tvDate, tvPrice, tvAddress, tvStatus;
+    private Button btnConfirm;
 
     public OrderCard(Context context){
         super(context);
@@ -26,16 +28,22 @@ public class OrderCard extends LinearLayout {
         initControl(context);
     }
 
-    private void initControl(Context context){
+    @Override
+    public void initUI() {
+        tvDate = findViewById(R.id.tvDateMakeOrder);
+        tvPrice = findViewById(R.id.tvOrderPrice);
+        tvAddress = findViewById(R.id.tvOrderAddress);
+        tvStatus = findViewById(R.id.tvOrderStatus);
+        btnConfirm = findViewById(R.id.btnConfirmOrder);
+    }
+
+    @Override
+    public void initControl(Context context){
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.view_order_card, this);
 
-        TextView tvDate = findViewById(R.id.tvDateMakeOrder);
-        TextView tvPrice = findViewById(R.id.tvOrderPrice);
-        TextView tvAddress = findViewById(R.id.tvOrderAddress);
-        TextView tvStatus = findViewById(R.id.tvOrderStatus);
+        initUI();
 
-        Button btnConfirm = findViewById(R.id.btnConfirmOrder);
         btnConfirm.setOnClickListener(view -> {
             order.setStatus("Delivered");
             HomeActivity.dao.updateOrder(order);

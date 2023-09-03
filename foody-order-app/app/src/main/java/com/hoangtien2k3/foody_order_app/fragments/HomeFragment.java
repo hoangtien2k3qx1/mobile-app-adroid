@@ -3,6 +3,7 @@ package com.hoangtien2k3.foody_order_app.fragments;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,6 +31,8 @@ public class HomeFragment extends Fragment {
     private RecyclerView recyclerView;
     private RestaurantAdapter restaurantAdapter;
     private DAO dao;
+
+    private ConstraintLayout btnOrderFood;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -76,15 +79,11 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
-
         recyclerView = rootView.findViewById(R.id.recyclerView_Restaurant);
         restaurantAdapter = new RestaurantAdapter(HomeActivity.dao.getRestaurantList());
-
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(restaurantAdapter);
-
         return rootView;
+
     }
-
-
 }

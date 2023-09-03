@@ -15,9 +15,12 @@ import com.hoangtien2k3.foody_order_app.fragments.SavedFragment;
 import com.hoangtien2k3.foody_order_app.model.Restaurant;
 import com.hoangtien2k3.foody_order_app.model.RestaurantSaved;
 
-public class RestaurantCard extends LinearLayout {
+public class RestaurantCard extends LinearLayout implements BaseComponent{
     private Restaurant restaurant;
     private boolean isSaved;
+    private ImageView image;
+    private TextView tvRestaurantName, tvRestaurantAddress;
+    private Button btnSaved;
 
     public RestaurantCard(Context context, Restaurant restaurant, boolean isSaved) {
         super(context);
@@ -30,15 +33,20 @@ public class RestaurantCard extends LinearLayout {
         super(context);
     }
 
-    private void initControl(Context context){
+    @Override
+    public void initUI() {
+        image = findViewById(R.id.imageRestaurant);
+        tvRestaurantName = findViewById(R.id.tvRestaurantName_res_cart);
+        tvRestaurantAddress = findViewById(R.id.tvRestaurantAddress_res_cart);
+        btnSaved = findViewById(R.id.btnSavedRestaurant);
+    }
+
+    @Override
+    public void initControl(Context context){
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.view_restaurant_card, this);
 
-        ImageView image = findViewById(R.id.imageRestaurant);
-        TextView tvRestaurantName = findViewById(R.id.tvRestaurantName_res_cart);
-        TextView tvRestaurantAddress = findViewById(R.id.tvRestaurantAddress_res_cart);
-        Button btnSaved = findViewById(R.id.btnSavedRestaurant);
-
+        initUI();
 
         if(isSaved){
             btnSaved.setText("BỎ LƯU");   // Thẻ được lưu

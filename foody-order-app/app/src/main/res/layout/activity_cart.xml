@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.ActivityImpl.CartActivity">
+    tools:context=".activity.ActivityImpl.CartViewPagerActivity">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"

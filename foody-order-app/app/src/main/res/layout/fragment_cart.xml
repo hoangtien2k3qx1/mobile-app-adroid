@@ -11,7 +11,7 @@
         android:layout_height="47sp"
         android:layout_gravity="center"
         android:orientation="vertical"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:elevation="10dp"
         android:background="@drawable/bg_function">
 
@@ -19,14 +19,14 @@
             android:layout_width="match_parent"
             android:orientation="vertical"
             android:layout_height="47sp"
-            android:background="@color/green">
+            android:background="@color/silver">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="Giỏ Hàng"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:textColor="@color/white"
+                android:textColor="@color/blue"
                 android:layout_gravity="center"
                 android:gravity="center"/>
         </LinearLayout>

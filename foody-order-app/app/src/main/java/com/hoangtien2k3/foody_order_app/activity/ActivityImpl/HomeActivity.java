@@ -76,7 +76,7 @@ public class HomeActivity extends AppCompatActivity implements HomeActivityImpl 
 
         // giỏ hàng: dùng ViewPager và Tablayout
         btnCart.setOnClickListener(view -> {
-            Intent intent = new Intent(HomeActivity.this, CartActivity.class);
+            Intent intent = new Intent(HomeActivity.this, CartViewPagerActivity.class);
             startActivity(intent);
         });
     }

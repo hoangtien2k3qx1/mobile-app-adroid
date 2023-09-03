@@ -92,7 +92,7 @@ public class HistoryFragment extends Fragment {
 
 
     ////////////////////////////
-    private void referencesComponent() {
+    public void referencesComponent() {
         LoadOrder("history");
     }
 

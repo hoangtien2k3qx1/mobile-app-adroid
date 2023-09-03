@@ -66,13 +66,13 @@
                     android:id="@+id/image_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/bottom_btn2" />
+                    app:srcCompat="@drawable/like" />
 
                 <TextView
                     android:id="@+id/text_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Profile"
+                    android:text="Ưu thích"
                     android:textAlignment="center"
                     android:textColor="#676767"
                     android:textSize="12sp" />
@@ -97,7 +97,7 @@
                     android:id="@+id/text_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Cart"
+                    android:text="Giỏ hàng"
                     android:textAlignment="center"
                     android:textColor="#676767"
                     android:textSize="12sp" />
@@ -145,7 +145,7 @@
                     android:id="@+id/text_55"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Settings"
+                    android:text="Cài đặt"
                     android:textAlignment="center"
                     android:textColor="#676767"
                     android:textSize="12sp" />

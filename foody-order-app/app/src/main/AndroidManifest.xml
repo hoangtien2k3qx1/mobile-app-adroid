@@ -13,7 +13,7 @@
         android:theme="@style/Theme.foodyorderapp"
         tools:targetApi="31">
         <activity
-            android:name=".activity.ActivityImpl.CartActivity"
+            android:name=".activity.ActivityImpl.CartViewPagerActivity"
             android:exported="false" />
         <activity
             android:name=".activity.ActivityImpl.ViewOrderActivity"

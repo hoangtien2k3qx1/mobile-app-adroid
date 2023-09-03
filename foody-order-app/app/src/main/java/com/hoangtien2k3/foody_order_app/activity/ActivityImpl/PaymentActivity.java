@@ -10,10 +10,7 @@ import android.widget.Toast;
 
 import com.hoangtien2k3.foody_order_app.R;
 import com.hoangtien2k3.foody_order_app.fragments.CartFragment;
-import com.hoangtien2k3.foody_order_app.fragments.DeliveryFragment;
-import com.hoangtien2k3.foody_order_app.fragments.HistoryFragment;
 import com.hoangtien2k3.foody_order_app.repository.DAO;
-import com.hoangtien2k3.foody_order_app.fragments.ChatFragment;
 import com.hoangtien2k3.foody_order_app.model.Notify;
 import com.hoangtien2k3.foody_order_app.model.NotifyToUser;
 import com.hoangtien2k3.foody_order_app.model.Order;

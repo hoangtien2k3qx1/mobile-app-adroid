@@ -9,7 +9,7 @@ import com.hoangtien2k3.foody_order_app.R;
 import com.hoangtien2k3.foody_order_app.model.Notify;
 
 
-public class NotifyCard extends LinearLayout {
+public class NotifyCard extends LinearLayout implements BaseComponent{
 
     TextView tvTitle, tvContent, tvDateMake;
     Notify notify;
@@ -24,18 +24,23 @@ public class NotifyCard extends LinearLayout {
         initControl(context);
     }
 
-    private void initControl(Context context){
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(R.layout.view_notify_card, this);
-
+    @Override
+    public void initUI() {
         tvTitle = findViewById(R.id.tvTitleNotify);
         tvContent = findViewById(R.id.tvContentNotify);
         tvDateMake = findViewById(R.id.tvDateMakeNotify);
+    }
+
+    @Override
+    public void initControl(Context context){
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        inflater.inflate(R.layout.view_notify_card, this);
+
+        initUI();
 
         //Set text
         tvTitle.setText(notify.getTitle());
         tvContent.setText(notify.getContent());
         tvDateMake.setText(notify.getDateMake());
-
     }
 }

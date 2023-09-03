@@ -17,10 +17,13 @@ import com.hoangtien2k3.foody_order_app.model.Food;
 import com.hoangtien2k3.foody_order_app.model.FoodSize;
 
 @SuppressLint("ViewConstructor")
-public class FoodSavedCard extends LinearLayout {
+public class FoodSavedCard extends LinearLayout implements BaseComponent{
     private final Food food;
     private final String restaurantName;
     private final FoodSize foodSize;
+    private ImageView image;
+    private TextView tvName, tvSize, tvrestaurantName, tvPrice;
+    private Button btnDelete;
 
     public FoodSavedCard(Context context, Food food, String restaurantName, FoodSize foodSize) {
         super(context);
@@ -30,18 +33,24 @@ public class FoodSavedCard extends LinearLayout {
         initControl(context);
     }
 
+    @Override
+    public void initUI() {
+        image = findViewById(R.id.imageSavedFood);
+        tvName = findViewById(R.id.tvFoodNameSaved);
+        tvSize = findViewById(R.id.tvFoodSavedSize);
+        tvrestaurantName = findViewById(R.id.tvFoodSavedRestaurantName);
+        tvPrice = findViewById(R.id.tvFoodSavedPrice);
+        btnDelete = findViewById(R.id.btnDeleteSaveCardItem);
+    }
+
+    @Override
     @SuppressLint("SetTextI18n")
-    private void initControl(Context context){
+    public void initControl(Context context) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.view_food_saved_card, this);
 
-        ImageView image = findViewById(R.id.imageSavedFood);
-        TextView tvName = findViewById(R.id.tvFoodNameSaved);
-        TextView tvSize = findViewById(R.id.tvFoodSavedSize);
-        TextView tvrestaurantName = findViewById(R.id.tvFoodSavedRestaurantName);
-        TextView tvPrice = findViewById(R.id.tvFoodSavedPrice);
+        initUI();
 
-        Button btnDelete = findViewById(R.id.btnDeleteSaveCardItem);
         btnDelete.setOnClickListener(view -> {
             AlertDialog.Builder dialog = new AlertDialog.Builder(getContext());
             dialog.setMessage("Bạn có muốn xóa món " + food.getName() + " không?");
@@ -49,14 +58,16 @@ public class FoodSavedCard extends LinearLayout {
                 HomeActivity.dao.deleteFoodSavedByFoodIdAndSize(foodSize.getFoodId(), foodSize.getSize());
                 SavedFragment.saved_container.removeView(this);
             });
-            dialog.setNegativeButton("Không", (dialogInterface, i) -> {});
+            dialog.setNegativeButton("Không", (dialogInterface, i) -> {
+            });
             dialog.show();
         });
+
 
         // Set information for cart card
         image.setImageBitmap(DatabaseHandler.convertByteArrayToBitmap(food.getImage()));
         tvName.setText(food.getName());
-        switch (foodSize.getSize()){
+        switch (foodSize.getSize()) {
             case 1:
                 tvSize.setText("Size S");
                 break;
@@ -71,7 +82,7 @@ public class FoodSavedCard extends LinearLayout {
         tvPrice.setText(getRoundPrice(foodSize.getPrice()));
     }
 
-    private String getRoundPrice(Double price){
+    private String getRoundPrice(Double price) {
         return Math.round(price) + " VNĐ";
     }
 }

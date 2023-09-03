@@ -11,10 +11,12 @@ import com.hoangtien2k3.foody_order_app.repositoryInit.DatabaseHandler;
 import com.hoangtien2k3.foody_order_app.model.Food;
 
 
-public class FoodCard extends LinearLayout {
+public class FoodCard extends LinearLayout implements BaseComponent{
     private Food food;
     private Double defaultPrice;
     private String restaurantName;
+    private ImageView image;
+    private TextView tvName, tvPrice, tvRestaurantName;
 
     public FoodCard(Context context, Food food, Double defaultPrice, String restaurantName){
         super(context);
@@ -29,14 +31,20 @@ public class FoodCard extends LinearLayout {
         initControl(context);
     }
 
-    private void initControl(Context context){
+    @Override
+    public void initUI() {
+        image = findViewById(R.id.imageFood);
+        tvName = findViewById(R.id.tvNameFood);
+        tvPrice = findViewById(R.id.tvPriceFood);
+        tvRestaurantName = findViewById(R.id.tvFoodRestaurantName);
+    }
+
+    @Override
+    public void initControl(Context context){
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.view_food_card, this);
 
-        ImageView image = findViewById(R.id.imageFood);
-        TextView tvName = findViewById(R.id.tvNameFood);
-        TextView tvPrice = findViewById(R.id.tvPriceFood);
-        TextView tvRestaurantName = findViewById(R.id.tvFoodRestaurantName);
+        initUI();
 
         // Set information for food cart
         image.setImageBitmap(DatabaseHandler.convertByteArrayToBitmap(food.getImage()));
