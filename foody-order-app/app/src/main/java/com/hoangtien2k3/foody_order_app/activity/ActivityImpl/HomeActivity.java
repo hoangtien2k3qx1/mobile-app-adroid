@@ -12,7 +12,6 @@ import android.widget.LinearLayout;
 import com.hoangtien2k3.foody_order_app.R;
 import com.hoangtien2k3.foody_order_app.activity.HomeActivityImpl;
 import com.hoangtien2k3.foody_order_app.repository.DAO;
-import com.hoangtien2k3.foody_order_app.fragments.ChatFragment;
 import com.hoangtien2k3.foody_order_app.fragments.HomeFragment;
 import com.hoangtien2k3.foody_order_app.fragments.CartFragment;
 import com.hoangtien2k3.foody_order_app.fragments.NotifyFragment;
@@ -50,7 +49,6 @@ public class HomeActivity extends AppCompatActivity implements HomeActivityImpl 
     public void initializeUI() {
         homeFragment = new HomeFragment();
         savedFragment = new SavedFragment();
-        chatFragment = new ChatFragment();
         notifyFragment = new NotifyFragment();
         profileFragment = new ProfileFragment();
         informationFragment = new CartFragment();
