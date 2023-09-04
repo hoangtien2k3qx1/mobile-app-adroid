@@ -277,6 +277,7 @@ public class DAO {
         return cursor.moveToNext();
     }
 
+    // lấy ra thông tin đăng nhập xem có tồn tại không
     public User getUserByUsernameAndPassword(String username, String password) {
         String query = "SELECT * FROM tblUser WHERE username='" + username + "' and password='" + password + "'";
         Cursor cursor = dbHelper.getDataRow(query);
@@ -288,6 +289,23 @@ public class DAO {
         }
         return null;
     }
+
+
+    // kiểm tra xem user đã tồn tại trong db hay không
+    public boolean checkUsername(String username) {
+        String query = "SELECT * FROM tblUser WHERE username='" + username + "'";
+        Cursor cursor = dbHelper.getData(query);
+        return cursor.getCount() > 0;
+    }
+
+    // kiểm tra xem password đã tồn tại trong db hay không
+    public boolean checkPasswordToCurrentUsername(String username, String password) {
+        String query = "SELECT * FROM tblUser WHERE username='" + username + "' and password='" + password + "'";
+        Cursor cursor = dbHelper.getDataRow(query);
+        return cursor.getCount() > 0;
+    }
+
+
 
     public boolean signIn(User user){
         User existedUser = getUserByUsernameAndPassword(user.getUsername(), user.getPassword());

@@ -124,7 +124,6 @@ public class HomeFragment extends Fragment {
         return rootView;
     }
 
-
     // thiết lập thời gian lặp lại ảnh
     private void autoSildeImage() {
         if (listPhoto == null || listPhoto.isEmpty() || viewPager == null) return;

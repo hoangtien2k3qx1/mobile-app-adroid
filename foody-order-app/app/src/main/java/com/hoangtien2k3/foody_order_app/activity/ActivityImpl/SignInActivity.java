@@ -23,7 +23,7 @@ import com.hoangtien2k3.foody_order_app.model.User;
 public class SignInActivity extends AppCompatActivity {
     private ImageView btnSignInApp;
     private EditText txtUsername, txtPassword;
-    private TextView validate, textSignUpApp;
+    private TextView validateUsername, validatePassword, textSignUpApp;
     public static final String PREFERENCES = "store_info";
     private SharedPreferences sharedPreferences;
     public static DAO dao;
@@ -50,7 +50,8 @@ public class SignInActivity extends AppCompatActivity {
         btnSignInApp = findViewById(R.id.btnSignInApp);
         txtUsername = findViewById(R.id.txtEmail);
         txtPassword = findViewById(R.id.txtPassword);
-        validate = findViewById(R.id.validate);
+        validateUsername = findViewById(R.id.validateUsername);
+        validatePassword = findViewById(R.id.validatePassword);
         textSignUpApp = findViewById(R.id.textSignUpApp);
     }
 
@@ -68,18 +69,27 @@ public class SignInActivity extends AppCompatActivity {
                 if (userExist != null) {
                     isRightAuthentication = dao.signIn(userExist);
                 }
-                if (isRightAuthentication) {
+                if (isRightAuthentication) { // đăng nhập thành công
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString("username", userExist.getUsername());
                     editor.putString("password", userExist.getPassword());
                     editor.apply();
 
+
+                    // setup thông báo về rỗng
+                    validateUsername.setText("");
+                    validatePassword.setText("");
+
                     Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
                     HomeActivity.user = userExist; // truyền cái User đã đăng ký tài khoản vào HomeActivity
                     startActivity(intent); // start nó lên
 
-                } else {
-                    validate.setText(getResources().getString(R.string.error_information_login));
+                } else { // đăng nhập thất bại
+                    if (!dao.checkUsername(username)) {
+                        validateUsername.setText("Sai tài khoản đăng nhập");
+                    } else if (!dao.checkPasswordToCurrentUsername(username, password)) {
+                        validatePassword.setText("Sai mật khẩu đăng nhập");
+                    }
                     Toast.makeText(getApplicationContext(), getResources().getString(R.string.error_information_login), Toast.LENGTH_SHORT).show();
                 }
             } else {

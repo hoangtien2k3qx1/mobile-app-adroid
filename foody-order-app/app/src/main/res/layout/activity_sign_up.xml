@@ -52,7 +52,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginEnd="32dp"
                 android:background="@drawable/bg_edittext_background"
                 android:drawableStart="@drawable/name"
@@ -63,12 +63,20 @@
                 android:padding="8dp"
                 android:textColorHint="#603a91" />
 
+            <TextView
+                android:id="@+id/checkUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:textColor="@color/red" />
+
             <EditText
                 android:id="@+id/txtPassword"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="25dp"
                 android:layout_marginEnd="32dp"
                 android:background="@drawable/bg_edittext_background"
                 android:drawableStart="@drawable/password"
@@ -78,6 +86,14 @@
                 android:inputType="textPassword"
                 android:padding="8dp"
                 android:textColorHint="#603a91" />
+
+            <TextView
+                android:id="@+id/checkPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:textColor="@color/red" />
 
             <EditText
                 android:id="@+id/txtConfirmPassword"
@@ -95,26 +111,10 @@
                 android:padding="8dp"
                 android:textColorHint="#603a91" />
 
-            <EditText
-                android:id="@+id/txtEmail"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="32dp"
-                android:background="@drawable/bg_edittext_background"
-                android:drawableStart="@drawable/email"
-                android:drawablePadding="16dp"
-                android:ems="10"
-                android:hint="Email nếu có"
-                android:inputType="textEmailAddress"
-                android:padding="8dp"
-                android:textColorHint="#603a91" />
-
             <ImageView
                 android:id="@+id/btnSignUp"
                 android:layout_gravity="end"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="40dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/btn_login" />
@@ -123,7 +123,7 @@
                 android:id="@+id/txtSignInApp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="50dp"
                 android:text="Đã có tài khoản ? Đăng nhập"
                 android:textAlignment="center"
                 android:textColor="#603a91"

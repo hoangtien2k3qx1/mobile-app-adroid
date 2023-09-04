@@ -190,7 +190,7 @@
                 android:layout_marginTop="11sp"
                 android:text="@string/describe"
                 android:textColor="@color/black"
-                android:textSize="28sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -211,7 +211,7 @@
                 android:layout_marginTop="11sp"
                 android:text="@string/restaurant_information"
                 android:textColor="@color/black"
-                android:textSize="28sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
 
             <TextView
