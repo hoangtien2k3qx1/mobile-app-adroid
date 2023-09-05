@@ -25,7 +25,6 @@ import com.hoangtien2k3.foody_order_app.model.Restaurant;
 import java.util.ArrayList;
 
 public class ViewOrderActivity extends AppCompatActivity {
-
     private LinearLayout layout_container;
     private TextView tvDate, tvPrice, tvAddress, tvStatus;
     private DAO dao;

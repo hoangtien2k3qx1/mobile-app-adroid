@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:layout_margin="4dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
@@ -32,7 +31,7 @@
             android:layout_gravity="center_vertical">
             <TextView
                 android:id="@+id/tvDateMakeOrder"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/example_date"
                 android:layout_gravity="center_vertical"
@@ -44,14 +43,14 @@
                 android:layout_marginEnd="5dp"/>
             <TextView
                 android:id="@+id/tvOrderPrice"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:text="@string/money_text"
                 android:textColor="@color/red"/>
             <TextView
                 android:id="@+id/tvOrderAddress"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/address"
                 android:textColor="@color/black"/>
@@ -62,7 +61,7 @@
                 android:layout_marginEnd="5dp"/>
             <TextView
                 android:id="@+id/tvOrderStatus"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="italic"
                 android:text="@string/status"
